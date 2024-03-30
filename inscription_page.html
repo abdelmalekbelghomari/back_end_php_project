@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style_inscription.css">
+    <title>Inscription</title>
+</head>
+<body>
+    <form id="formInscription">
+        <input type="text" id="nom" name="surname" placeholder="Nom" required> <br>
+        <input type="text" id="prenom" name="name" placeholder="Prénom" required><br>
+        <input type="text" id="adresse" name="adress" placeholder="Adresse" required><br>
+        <input type="text" id="code_postal" name="postal_code" placeholder="Code Postal" required> <br>
+        <input type="text" id="ville" name="city" placeholder="Ville" required><br>
+        <input type="text" id="pays" name="country" placeholder="Pays" required><br>
+        <input type="email" id="email" name="email" placeholder="E-mail" required> <br>
+        <input type="password" id="password" name="password" placeholder="Mot de passe" required><br>
+        <div id="messageErreur"></div>
+        <button type="button" onclick="enregistrement()">S'inscrire</button>
+    </form>
+    
+</body>
+
+
+<script src="inscription.js"></script>
+</html>

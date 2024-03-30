@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style_connexion.css">
+    <title>Connexion</title>
+</head>
+<body>
+    <form id="formConnexion" method="post">
+        <h1>Connexion</h1>
+        <input type="email" id="email" name="emailConnexion" placeholder="E-mail" required> <br>
+        <input type="password" id="password" name="passwordConnexion" placeholder="Mot de passe" required><br>
+        <div id="messageErreur"></div>
+        <button type="button" onclick="connexion()">Se connecter</button>
+        <div id="buttonInscription"></div>
+    </form>
+    
+
+    <script src="connexion.js"></script>
+</body>
+</html>

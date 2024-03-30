@@ -1,0 +1,130 @@
+/* Appliquez des styles globaux */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+}
+
+/* Style du conteneur principal */
+#contenu-panier {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Style de la liste des éléments du panier */
+#contenu-panier ul {
+    list-style: none;
+    padding: 0;
+}
+
+#contenu-panier li {
+    padding: 10px;
+    border-bottom: 1px solid #eaeaea;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Style pour le titre de chaque élément du panier */
+#contenu-panier li h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: normal;
+}
+
+/* Style pour le prix et la quantité */
+#contenu-panier li span {
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+/* Style pour le total du panier */
+#prix-total {
+    text-align: right;
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Styles des boutons */
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0056b3;
+    color: white;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+button:hover {
+    background-color: #00397a;
+}
+
+/* Style spécifique pour le bouton Fermer si nécessaire */
+button.fermer {
+    background-color: #888;
+}
+
+button.fermer:hover {
+    background-color: #666;
+}
+
+/* Ajoutez des médias queries si nécessaire pour la réactivité */
+@media (max-width: 768px) {
+    #contenu-panier {
+        padding: 10px;
+    }
+
+    #contenu-panier li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+#snackbar {
+    visibility: hidden; /* Caché par défaut */
+    min-width: 250px; /* Largeur minimale */
+    margin-left: -125px; /* Moitié de la largeur pour centrer */
+    background-color: #333; /* Couleur de fond */
+    color: #fff; /* Couleur du texte */
+    text-align: center; /* Centrer le texte */
+    border-radius: 2px; /* Bordures arrondies */
+    padding: 16px; /* Padding */
+    position: fixed; /* Reste à la même place même lors du scroll */
+    z-index: 1; /* Affiche par-dessus les autres éléments */
+    left: 50%; /* Centrer horizontalement */
+    bottom: 30px; /* Position du bas */
+    font-size: 17px; /* Taille du texte */
+}
+
+#snackbar.show {
+    visibility: visible; /* Montrer le snackbar */
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
