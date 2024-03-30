@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function afficherPanier() {
-    fetch('getBasket.php') // Assurez-vous que ce script PHP renvoie les données du panier en JSON
+    fetch('../scripts_php/getBasket.php') // Assurez-vous que ce script PHP renvoie les données du panier en JSON
         .then(response => response.json())
         .then(data => {
             const contenuPanier = document.getElementById('contenu-panier');
@@ -21,7 +21,7 @@ function afficherPanier() {
 }
 
 function commander() {
-    fetch('order.php', { method: 'POST' })
+    fetch('../scripts_php/order.php', { method: 'POST' })
         .then(response => {
             if (!response.ok) throw new Error('Erreur lors de la commande');
             return response.json();
@@ -40,7 +40,7 @@ function commander() {
 }
 
 function viderPanier() {
-    fetch('emptyBasket.php', { method: 'POST' })
+    fetch('../scripts_php/emptyBasket.php', { method: 'POST' })
         .then(response => response.json())
         .then(data => {
             if (data.success) {
@@ -63,5 +63,5 @@ function viderPanier() {
 }
 
 function fermer() {
-    window.location.href = 'index.php';
+    window.location.href = '../scripts_php/index.php';
 }

@@ -1,5 +1,5 @@
 <?php
-    $counter_file = 'counter.txt';
+    $counter_file = '../counter.txt';
 
     if (file_exists($counter_file)) {
         $counter = (int)file_get_contents($counter_file);

@@ -7,14 +7,14 @@ function connexion() {
     } else {
         var formData = new FormData(document.getElementById('formConnexion'));
 
-        fetch('connexion.php', {
+        fetch('../scripts_php/connexion.php', {
             method: 'POST',
             body: formData,
         })
         .then(response => response.text())
         .then(result => {
             if (result !== "no") {
-                document.location.href = "index.php";
+                document.location.href = "../scripts_php/index.php";
             } else {
                 document.getElementById('messageErreur').innerText = "Cet utilisateur n'existe pas. Veuillez vous inscrire.";
                 document.getElementById('buttonInscription').innerHTML = "<button type="+"button"+" onclick="+"document.location.href='inscription_page.html'"+">S'inscrire</button>";

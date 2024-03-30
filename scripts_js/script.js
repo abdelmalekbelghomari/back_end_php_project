@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function searchAuthors(debnom) {
-    fetch('recherche_auteur.php?debnom=' + debnom)
+    fetch('../scripts_php/recherche_auteur.php?debnom=' + debnom)
         .then(response => response.json())
         .then(data => {
             let authorsList = document.getElementById('authors-list');
@@ -26,7 +26,7 @@ function searchAuthors(debnom) {
 }
 
 function searchTitles(debnom) {
-    fetch('recherche_titre.php?debnom=' + encodeURIComponent(debnom))
+    fetch('../scripts_php/recherche_titre.php?debnom=' + encodeURIComponent(debnom))
         .then(response => response.json())
         .then(data => {
             console.log(data);
@@ -57,7 +57,7 @@ function searchTitles(debnom) {
 
 function ajouterAuPanier(codeExemplaire) {
     mettreAJourInfosPanier();
-    fetch('basket.php', {
+    fetch('../scripts_php/basket.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
@@ -123,7 +123,7 @@ window.onclick = function(event) {
 }
 
 function afficherPanier() {
-    fetch('getBasket.php')
+    fetch('../scripts_php/getBasket.php')
         .then(response => response.json())
         .then(data => {
             prixPanier = [];
@@ -162,7 +162,7 @@ function ajouterArticleAuPanier(titre, editeur, prix, quantite) {
 }
 
 function mettreAJourInfosPanier() {
-    fetch('getBasket.php')
+    fetch('../scripts_php/getBasket.php')
     .then(response => response.json())
     .then(data => {
       let nombreArticles = data.reduce((acc, item) => acc + item.quantite, 0);
@@ -173,7 +173,7 @@ function mettreAJourInfosPanier() {
 
 
 function commander() {
-    fetch('order.php', { 
+    fetch('../scripts_php/order.php', { 
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
@@ -207,7 +207,7 @@ function commander() {
 }
 
 function viderPanier() {
-    fetch('emptyBasket.php', { method: 'POST' })
+    fetch('../scripts_php/emptyBasket.php', { method: 'POST' })
         .then(response => response.json())
         .then(data => {
             if (data.success) {
@@ -237,5 +237,5 @@ function putCartTo0(){
 }
 
 function disconnect(){
-    document.location.href = "deconnexion.php";
+    document.location.href = "../scripts_php/deconnexion.php";
 }

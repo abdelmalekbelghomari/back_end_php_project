@@ -1,5 +1,5 @@
 function searchUsers(debnom) {
-    fetch('recherche_utilisateur.php?debnom=' + debnom)
+    fetch('../scripts_php/recherche_utilisateur.php?debnom=' + debnom)
         .then(response => response.json())
         .then(data => {
             data.forEach(client => {

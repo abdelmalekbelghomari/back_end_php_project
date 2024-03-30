@@ -20,16 +20,14 @@ Pour exécuter ce projet sur une autre machine, veuillez suivre les étapes déc
 
 ### Étapes d'installation
 
-1. **Cloner le dépôt Git** : Clonez ce dépôt sur votre machine locale en utilisant la commande `git clone URL_DU_DEPOT`.
-
-2. **Configuration de la base de données** :
+1. **Configuration de la base de données** :
    - Créez une nouvelle base de données PostgreSQL.
-   - Importez le fichier `database.sql` fourni dans le dossier racine du projet pour créer les tables nécessaires.
-   - Mettez à jour le fichier `db_config.php` avec les informations de connexion à votre base de données.
+   - Importez les fichier `sql` fourni dans le dossier racine du projet pour créer les tables nécessaires.
+   - Mettez à jour le fichier `db_livres.php` et `db_boutiqueLivre` avec les informations de connexion à votre base de données.
 
-3. **Démarrer le serveur web** : Placez le projet dans le dossier de votre serveur web et démarrez le serveur.
+2. **Démarrer le serveur web** : Placez le projet dans le dossier de votre serveur web et démarrez le serveur.
 
-4. **Accès à l'application** : Ouvrez votre navigateur et accédez à `http://localhost/chemin_vers_le_projet/` pour voir l'application en action.
+3. **Accès à l'application** : Ouvrez votre navigateur et accédez à `http://localhost/acceuil.php/` pour voir l'application en action.
 
 ## Tutoriel Vidéo
 
