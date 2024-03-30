@@ -14,9 +14,7 @@ if (!isset($_COOKIE['codeClient'])) {
             $user_firstname = $userInfo['prenom'];
             $_SESSION['user'] = $codeClient;
             $_SESSION['nomClient'] = $user_name;
-            $_SESSION['prenomClient'] = $user_firstname;
-            // echo "$user_name $user_firstname";
-            
+            $_SESSION['prenomClient'] = $user_firstname;            
         } else {
             $afficherInscription = true;
         }
@@ -47,7 +45,7 @@ if (!isset($_COOKIE['codeClient'])) {
         <section id="title">Vente de Livres</section>
         <section id="user">
         <?php if ($afficherInscription) : ?>
-            <a href="inscription_page.html">Inscription</a>
+            <a href="../html/inscription_page.html">Inscription</a>
         <?php else : ?>
             <div>
                 <h3>Bienvenue <?php echo htmlspecialchars($user_firstname) . " " . htmlspecialchars($user_name); ?> </h3>

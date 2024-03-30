@@ -13,7 +13,9 @@
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if ($result && password_verify($password_user, $result['password'])) {
-        $_COOKIE['codeClient'] = $result['client_id'];
+        if(empty($_COOKIE['codeClient'])) {
+            setcookie('codeClient', $result['client_id'], time() + 365*24*3600, null, null, false, true);
+        }
         $_SESSION['user'] = $result['client_id'];
         $_SESSION['nomClient'] = $result['nom'];
         $_SESSION['prenomClient'] = $result['prenom'];
